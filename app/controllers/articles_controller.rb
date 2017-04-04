@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
+		@article.user = User.first
 		if @article.save
 			flash[:success] = 'Article was successfully created'
 			#this flash :notice has to be dispalyed in application.html.erb
@@ -35,7 +36,7 @@ class ArticlesController < ApplicationController
 		end
 	end
 
-	def show
+	def show 
 	
 	end
 
